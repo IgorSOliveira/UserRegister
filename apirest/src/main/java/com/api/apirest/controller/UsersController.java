@@ -1,6 +1,7 @@
 package com.api.apirest.controller;
 
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.http.ResponseEntity;
@@ -32,7 +33,13 @@ public class UsersController {
 	}
 	
 	@GetMapping("/{Id}")
-	public ResponseEntity<User> createUser(@PathVariable("Id") String Id){
+	public ResponseEntity<User> getUserById(@PathVariable("Id") String Id){
+		//
+		return null;
+	}
+	
+	@GetMapping
+	public ResponseEntity<List<User>> createUser(@PathVariable("Id") String Id){
 		//
 		return null;
 	}

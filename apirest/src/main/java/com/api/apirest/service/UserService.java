@@ -1,6 +1,5 @@
 package com.api.apirest.service;
 
-import java.time.Instant;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
@@ -20,10 +19,11 @@ public class UserService {
 	
 	//Transformar o UserDto em uma variavel "user"
 	public UUID createUser(UserDto UserDto) {
-		var user = new User(UUID.randomUUID(), UserDto.email(), UserDto.username(), UserDto.password());
+		var user = new User(UUID.randomUUID(),  UserDto.username(), UserDto.email(),  UserDto.password());
 		
 		var usuarioSalvo = userRepository.save(user);
 		
 		return usuarioSalvo.getID();
 	}
+	
 }
