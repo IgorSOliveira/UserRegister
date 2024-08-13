@@ -3,8 +3,8 @@ package com.api.apirest.controller;
 import java.net.URI;
 import java.util.List;
 
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.http.ResponseEntity;
+import com.api.apirest.entity.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,12 +32,17 @@ public class UsersController {
 		return ResponseEntity.created(URI.create("/users/" + userId.toString())).build();
 	}
 	
-	@GetMapping("/{Id}")
-	public ResponseEntity<User> getUserById(@PathVariable("Id") String Id){
-		//
-		return null;
-	}
-	
+    @GetMapping("/{userId}")
+    public ResponseEntity<User> getUserById(@PathVariable("userId") String userId) {
+        var user = userService.getUserById(userId);
+
+        if (user.isPresent()) {
+            return ResponseEntity.ok(user.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+    
 	@GetMapping
 	public ResponseEntity<List<User>> createUser(@PathVariable("Id") String Id){
 		//
