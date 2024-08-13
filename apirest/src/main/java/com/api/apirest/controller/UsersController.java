@@ -46,7 +46,7 @@ public class UsersController {
 	@GetMapping
 	public ResponseEntity<List<User>> createUser(@PathVariable("Id") String Id){
 		//
-		return var;
+		return null;
 	}
 	
 }
