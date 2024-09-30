@@ -24,13 +24,13 @@ GET /users - Retorna a lista com todos os usuários.
 ```json
 [
     {
-        "id": d72dadb6-48e4-4c75-923b-835381f8cf21,
+        "id": "d72dadb6-48e4-4c75-923b-835381f8cf21",
         "username": "Igor"
         "email": "igor@example.com",
         "password": "123",
     },
     {
-        "id": f5c7e1d2-9a3b-4674-967d-a90b4f8b7e9b,
+        "id": "f5c7e1d2-9a3b-4674-967d-a90b4f8b7e9b",
         "username": "Pedro"
         "email": "pedro@example.com",
         "password": "455",
